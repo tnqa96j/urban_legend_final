@@ -1,0 +1,123 @@
+html {
+
+    box-sizing: border-box;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  
+  @media (max-width:1200px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width:992px) {
+    html {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width:768px) {
+    html {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width:576px) {
+    html {
+      font-size: 10px;
+    }
+  }
+  @media (max-width:360px) {
+    html {
+      font-size: 6px;
+    }
+  }
+/*標題開始*/
+.top-bar {
+    height: 90px;
+    width: 100%;
+    background-color: #000000;
+    color: #effeee;
+    font-size: 2.5rem;
+    text-align: left;
+    font-family: "MingLiU";
+    letter-spacing: 7px;
+    word-break: break-all;
+    border-bottom: 1px dotted #effeee;
+    padding-top: 15px;
+  }
+  .container{
+    margin-top: 0;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+    margin-left: 15px;
+  }
+.entry-container{
+    margin-top: 5%;
+    font-size:16px;
+    width:100%;
+    font-family: "MingLiU","Alegreya SC";
+    color:#effeee;
+    letter-spacing:2px;
+
+}
+.entry-type{
+    height: 400px;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    border:2px solid #effeee;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 0.2s linear;
+    margin-top: 15%;
+}
+@media (max-width:768px) {
+    .entry-type{
+        height: 350px;
+    }
+}
+@media (max-width:576px) {
+    .entry-type{
+        width:50%;
+        min-width: 275px;
+    }
+}
+.taiwan,.japan{
+    width:87%;
+    height: 83%;
+    margin-top: 5%;
+}
+.usa{
+    margin-top: 25%;
+    width:85%;
+
+}
+
+
+.taiwan-entry-text{
+    height: 10%;
+   font-size: 1.5rem;
+   align-self: end;
+
+}
+.taiwan-entry-text span{
+    font-family: "Alegreya SC";
+
+}
+.entry-type:hover{
+    transform: translate(5px, -5px);
+    box-shadow: -15px 15px 12px 0 rgb(30, 11, 12);
+    border: 1px dashed rgb(201, 31, 36);
+}
+footer h1,footer p{
+    color: #effeee;
+}
+@media (max-width:576px) {
+    footer h1{
+        font-size: 2.5rem;
+    }
+}

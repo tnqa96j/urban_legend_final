@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>都市傳說</title>
+    <!--bt-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fortune.css">
+    <!--firebase-->
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-storage-compat.js"></script>
+    
+    <!--jq-->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--gsap-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+
+        <!--aos-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/data.js"></script>
+</head>
+
+<body>
+    <!--loading動畫-->
+    <div class="loading-wrapper">
+        <figure>
+            <img src="./gif/loading.gif">
+        </figure>
+    </div>
+    <div class="wrapper">
+        <div class="btn-bar"></div>
+        <div class="btn1">
+            <div class="btn-line"></div>
+            <div class="btn-line2"></div>
+            <div class="btn-line3"></div>
+        </div>
+        <div class="asidemenu">
+
+            <div class="nav-list">
+                <div class="menu">MENU</div>
+                <ul class="nav-list-area">
+                    <li class="nav-list-area-item"><a href="index.html">&ensp;&ensp;HOME&ensp;‧&ensp;首頁</a></li>
+                    <li class="nav-list-area-item aaa"><a>&ensp;&ensp;ARCHIVES&ensp;‧&ensp;檔案庫<span
+                                class="rotatetri">&#9658;</span></a>
+                    </li>
+                    <ul class="archives-nav">
+                        <li class="archives-nav-item"><a href="map_taiwan.html">臺灣</a></li>
+                        <li class="archives-nav-item"><a href="map_japan.html">日本</a></li>
+                        <li class="archives-nav-item"><a href="map_the_usa.html">美國</a></li>
+                    </ul>
+                    <li class="nav-list-area-item bbb"><a href="forum.html">&ensp;&ensp;FORUM&ensp;‧&ensp;論壇</a></li>
+                    <li class="nav-list-area-item bbb"><a
+                            href="fortunate.html">&ensp;&ensp;DIVINATION&ensp;‧&ensp;占卜</a></li>
+                </ul>
+                <div class="btn-area">
+                    <a href="#"><img src="./img/facebook.png" alt="" width="35px" height="35px"></a>
+                    <a href="#"><img src="./img/twitter.png" alt="" width="35px" height="35px"></a>
+                    <a href="#"><img src="./img/instagram.png" alt="" width="35px" height="35px"></a>
+                    <a href="#"><img src="./img/discord.png" alt="" width="35px" height="35px"></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="top-bar col-xl-12"><a href="index.html">都市傳說</a><span class="subtitle">占卜</span></div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="fortune-title">FORTUNE-TELLING·占卜</div>
+                </div>
+            </div>
+            <div class="warning-icon"> <img src="gif/aboutus.gif" class="warning-icon"></div>
+            <div class="warningfortune">警告:本次占卜結果自負，內含恐怖內容</div>
+            <div class="warningfortune">心理承受能力弱者慎重測驗</div>
+            <a href="#section" class="fortunate-btn">測試<div class="triangle-forum"></div></a>
+            
+            <ul id="section">
+                <!--大吉-->
+                <li class="goodluck">
+                    
+                      <p> <span class="resultis">結果：大吉</span>
+                        <br>即使你走在黑暗的小巷也能安全避開周遭的危險。</p>
+                        <div class="box"><img src="img/goodluck.jpg" alt=""></div>
+                  
+                </li>
+                <!--中吉-->
+                <li class="midluck">
+                    <p> <span class="resultis">結果：中吉</span>
+                        <br>只要晚上別去太偏僻的地方基本上就不會有事。</p>
+                        <div class="box"><img src="img/midluck.jpg" alt=""></div>
+                </li>
+                <!--小吉-->
+                <li class="litluck">
+                    <p> <span class="resultis">結果：小吉</span>
+                        <br>偶爾會遇到鬼，但也能安全脫離。</p>
+                        <div class="box"><img src="img/litluck.jpg" alt=""></div>
+                </li>
+                <!--小凶-->
+                <li class="noluck"><p> <span class="resultis red">結果：小凶</span>
+                    <br>你需要對身邊的不祥事物保持警覺。</p>
+                    <div class="box"><img src="img/noluck.jpg" alt=""></div>
+                </li>
+                <!--大凶-->
+                <li class="badluck">
+                    <p> <span class="resultis red">結果：大凶</span>
+                        <br>真倒楣，出門買個東西都能撞到鬼</p>
+                        <div class="box"><img src="gif/noluck.gif" alt=""></div>
+                </li>
+            </ul>
+            
+            
+        </div>
+        <footer> <!--footer-->
+            <div class="footer1">
+              <img src="img/titlenomove.png" class="footer1img">
+            </div>
+      
+            <div class="footer2">
+              <h1>首頁</h1>
+              <a href="index.html#aboutus">關於我們</a>
+              <a href="forum.html">論壇</a>
+              <a href="fortunate.html">占卜</a>
+            </div>
+      
+            <div class="footer3">
+              <h1>檔案庫</h1>
+              <a href="map_taiwan.html">台灣</a>
+              <a href="map_japan.html">日本</a>
+              <a href="map_the_usa.html">美國</a>
+            </div>
+      
+            <div class="footer4">
+              <h1>聯絡我們</h1>
+              <div class="footer-btn-group">
+                <img src="img/facebook.png">
+                <img src="img/twitter.png">
+                <img src="img/instagram.png">
+                <img src="img/discord.png">
+              </div>
+              <p>EMAIL: Urban_Legend@gmail.com</p>
+            </div>
+      
+          </footer>
+    </div>
+
+</body>
+
+</html>
